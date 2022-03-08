@@ -1,5 +1,6 @@
 import mysql.connector
 from mysql.connector import errorcode
+import gui
 import csv
 
 cnx = mysql.connector.connect(user='root',
@@ -28,7 +29,7 @@ def create_table_citizens(cursor):
                      "  `citizen_id` int(11) NOT NULL," \
                      "  `firstname` varchar(30) NOT NULL," \
                      "  `lastname` varchar(30) NOT NULL," \
-                     "  `ethnicity` varchar(3)," \
+                     "  `nationality` varchar(3)," \
                      "  `gender` char(1)," \
                      "  `date_of_birth` int(9)," \
                      "  PRIMARY KEY (`citizen_id`)" \
@@ -46,6 +47,7 @@ def create_table_offenses(cursor):
                      ") ENGINE=InnoDB"
     try_create_table(cursor, create_citizens)
 
+
 # Defines a schema and attempts to create a citizens table in the database.
 def create_table_convictions(cursor):
     create_citizens = "CREATE TABLE `convictions` (" \
@@ -55,24 +57,6 @@ def create_table_convictions(cursor):
                      "  PRIMARY KEY (`conviction_id`)" \
                      ") ENGINE=InnoDB"
     try_create_table(cursor, create_citizens)
-
-
-# Defines a schema and attempts to create a species table in the database.
-def create_table_species(cursor):
-    create_species = "CREATE TABLE `species` (" \
-                     "  `name` varchar(30) NOT NULL," \
-                     "  `offense_class` varchar(45)," \
-                     "  `designation` varchar(45)," \
-                     "  `average_height` int(11)," \
-                     "  `skin_colors` varchar(45)," \
-                     "  `hair_colors` varchar(45)," \
-                     "  `eye_colors` varchar(45)," \
-                     "  `average_lifespan` int(11)," \
-                     "  `language` varchar(45)," \
-                     "  `homeworld` varchar(45)," \
-                     "  PRIMARY KEY (`name`)" \
-                     ") ENGINE=InnoDB"
-    try_create_table(cursor, create_species)
 
 
 # Attempts to create a table from the given schema query.
@@ -97,45 +81,6 @@ def replace_na(str):
         return "'" + str + "'"
 
 
-# Inserts data from a planets list into the planets table.
-def insert_into_planets(cursor, planetslist):
-    insert_sql = [
-        "INSERT INTO planets (name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population)"
-        "VALUES ('Alderaan', '24', '364', '12500', 'temperate', '1 standard','grasslands, mountains', '40', '2000000000');"
-        ]
-
-    insert_sql = []
-
-    for planet in planetslist:
-        p = []
-        for val in planet:
-            p.append(replace_na(val))
-
-        insert_sql.append(
-            "INSERT INTO planets (name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population)"
-            "VALUES ({}, {}, {}, {}, {}, {}, {}, {}, {});"
-            .format(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8]))
-
-    run_insert_queries(insert_sql)
-
-
-# Inserts data from a species list into the species table.
-def insert_into_species(cursor, specieslist):
-    insert_sql = []
-
-    for species in specieslist:
-        p = []
-        for val in species:
-            p.append(replace_na(val))
-
-        insert_sql.append(
-            "INSERT INTO species (name, offense_class, designation, average_height, skin_colors, hair_colors, eye_colors, average_lifespan, language, homeworld)"
-            "VALUES ({}, {}, {}, {}, {}, {}, {}, {}, {}, {});"
-            .format(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9]))
-
-    run_insert_queries(insert_sql)
-
-
 # Runs a list of SQL queries.
 def run_insert_queries(queries):
     errors = 0
@@ -155,7 +100,7 @@ def run_insert_queries(queries):
 def OnReadCitizensLine(insert_sql, line, count):
     a = line.split('|')
     insert_sql.append(
-        "INSERT INTO citizens (citizen_id, firstname, lastname, ethnicity, gender, date_of_birth)"
+        "INSERT INTO citizens (citizen_id, firstname, lastname, nationality, gender, date_of_birth)"
         "VALUES ({}, '{}', '{}', '{}', '{}', {});"
             .format(count - 1, a[0].replace('\'', ' '), a[1].replace('\'', ' '), a[2], a[3], a[4]))
 
@@ -216,13 +161,13 @@ def print_citizens(cursor, query):
     cursor.execute(query)
     columns = "| {:<9} | {:<25} | {:<25} | {:<4} | {:<4} | {:<10}"
     # Print column names.
-    print(columns.format('citizen_id', 'firstname', 'lastname', 'ethnicity', 'gender', 'date_of_birth'))
+    print(columns.format('citizen_id', 'firstname', 'lastname', 'nationality', 'gender', 'date_of_birth'))
     # Print line to separate column names from tuples.
     print("-" * 220)
 
     # Change null values to 'null' strings before printing.
-    for (citizen_id, firstname, lastname, ethnicity, gender, dayOfBirth) in cursor:
-        print(columns.format(citizen_id, firstname, lastname, ethnicity, gender, dayOfBirth))
+    for (citizen_id, firstname, lastname, nationality, gender, dayOfBirth) in cursor:
+        print(columns.format(citizen_id, firstname, lastname, nationality, gender, dayOfBirth))
 
 
 # Prints a table of citizens to the console.
@@ -238,19 +183,6 @@ def print_offenses(cursor, query):
     for (offense_code, offense_name, offense_class) in cursor:
         print(columns.format(offense_code, offense_class, offense_name))
 
-
-# Prints the main menu.
-def print_menu():
-    print("1. List all planets.")
-    print("2. Search for planet details.")
-    print("3. Search for species with height higher than given number.")
-    print("4. What is the most likely desired climate of the given species?")
-    print("5. What is the average lifespan per species classification?")
-    print("Q. Quit")
-    print("----------")
-    print("Please choose one option:")
-
-
 # Attempts to set the database and creates a new one if none exists.
 try:
     cursor.execute("USE {}".format(DB_NAME))
@@ -263,19 +195,22 @@ except mysql.connector.Error as err:
     else:
         print(err)
 
-cursor.execute("DROP TABLE citizens")
-cursor.execute("DROP TABLE offenses")
-cursor.execute("DROP TABLE convictions")
+reset_tables = False;
 
-# Create tables.
-create_table_citizens(cursor)
-create_table_offenses(cursor)
-create_table_convictions(cursor)
+if (reset_tables):
+    cursor.execute("DROP TABLE citizens")
+    cursor.execute("DROP TABLE offenses")
+    cursor.execute("DROP TABLE convictions")
 
-# Read .csv data to lists.
-read_txt_data('population.txt', 0)
-read_txt_data('offenses.txt', 1)
-read_txt_data('convictions.txt', 2)
+    # Create tables.
+    create_table_citizens(cursor)
+    create_table_offenses(cursor)
+    create_table_convictions(cursor)
+
+    # Read .csv data to lists.
+    read_txt_data('population.txt', 0)
+    read_txt_data('offenses.txt', 1)
+    read_txt_data('convictions.txt', 2)
 
 #for citizen in citizens_list:
 #    print("{}, {}, {}, {}, {}, {}".format(citizen[0], citizen[1], citizen[2], citizen[3], citizen[4], citizen[5]))
@@ -283,6 +218,7 @@ read_txt_data('convictions.txt', 2)
 # Insert data from lists into tables.
 print_citizens(cursor, 'SELECT * FROM citizens')
 print_offenses(cursor, 'SELECT * FROM offenses')
+#print_convictions(cursor, 'SELECT * FROM convictions')
 
 # Display menu until user enters 'Q'
 print('')
@@ -337,3 +273,5 @@ while selected != 'Q':
         input()
     # Always print a blank line before re-printing menu.
     print('')
+
+gui.display_gui(cursor)
