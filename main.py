@@ -25,13 +25,34 @@ def create_database(cursor, DB_NAME):
 # Defines a schema and attempts to create a citizens table in the database.
 def create_table_citizens(cursor):
     create_citizens = "CREATE TABLE `citizens` (" \
-                     "  `ssn` int(11) NOT NULL," \
+                     "  `citizen_id` int(11) NOT NULL," \
                      "  `firstname` varchar(30) NOT NULL," \
                      "  `lastname` varchar(30) NOT NULL," \
                      "  `ethnicity` varchar(3)," \
                      "  `gender` char(1)," \
-                     "  `dayOfBirth` int(9)," \
-                     "  PRIMARY KEY (`ssn`)" \
+                     "  `date_of_birth` int(9)," \
+                     "  PRIMARY KEY (`citizen_id`)" \
+                     ") ENGINE=InnoDB"
+    try_create_table(cursor, create_citizens)
+
+
+# Defines a schema and attempts to create a citizens table in the database.
+def create_table_offenses(cursor):
+    create_citizens = "CREATE TABLE `offenses` (" \
+                     "  `offense_code` varchar(8) NOT NULL," \
+                     "  `offense_name` varchar(300) NOT NULL," \
+                     "  `offense_class` varchar(30) NOT NULL," \
+                     "  PRIMARY KEY (`offense_code`)" \
+                     ") ENGINE=InnoDB"
+    try_create_table(cursor, create_citizens)
+
+# Defines a schema and attempts to create a citizens table in the database.
+def create_table_convictions(cursor):
+    create_citizens = "CREATE TABLE `convictions` (" \
+                     "  `conviction_id` varchar(8) NOT NULL," \
+                     "  `citizen_id` int(11) NOT NULL," \
+                     "  `offense_code` varchar(8) NOT NULL," \
+                     "  PRIMARY KEY (`conviction_id`)" \
                      ") ENGINE=InnoDB"
     try_create_table(cursor, create_citizens)
 
@@ -40,7 +61,7 @@ def create_table_citizens(cursor):
 def create_table_species(cursor):
     create_species = "CREATE TABLE `species` (" \
                      "  `name` varchar(30) NOT NULL," \
-                     "  `classification` varchar(45)," \
+                     "  `offense_class` varchar(45)," \
                      "  `designation` varchar(45)," \
                      "  `average_height` int(11)," \
                      "  `skin_colors` varchar(45)," \
@@ -108,7 +129,7 @@ def insert_into_species(cursor, specieslist):
             p.append(replace_na(val))
 
         insert_sql.append(
-            "INSERT INTO species (name, classification, designation, average_height, skin_colors, hair_colors, eye_colors, average_lifespan, language, homeworld)"
+            "INSERT INTO species (name, offense_class, designation, average_height, skin_colors, hair_colors, eye_colors, average_lifespan, language, homeworld)"
             "VALUES ({}, {}, {}, {}, {}, {}, {}, {}, {}, {});"
             .format(p[0], p[1], p[2], p[3], p[4], p[5], p[6], p[7], p[8], p[9]))
 
@@ -117,31 +138,43 @@ def insert_into_species(cursor, specieslist):
 
 # Runs a list of SQL queries.
 def run_insert_queries(queries):
+    errors = 0
     for query in queries:
         try:
-            print("SQL query {}: ".format(query), end='')
+            #print("SQL query {}: ".format(query), end='')
             cursor.execute(query)
         except mysql.connector.Error as err:
             print(err.msg)
+            errors += 1
         else:
             # Make sure data is committed to the database.
             cnx.commit()
-            print("OK")
+            #print("OK")
+    print("Errors running insert queries: {}".format(errors))
+
+def OnReadCitizensLine(insert_sql, line, count):
+    a = line.split('|')
+    insert_sql.append(
+        "INSERT INTO citizens (citizen_id, firstname, lastname, ethnicity, gender, date_of_birth)"
+        "VALUES ({}, '{}', '{}', '{}', '{}', {});"
+            .format(count - 1, a[0].replace('\'', ' '), a[1].replace('\'', ' '), a[2], a[3], a[4]))
 
 
-# Reads a .csv file and returns its contents as a list.
-def read_csv_to_list(csvpath, delimiter):
-    csvlist = []
-    with open(csvpath, newline='') as csvfile:
-        reader = csv.reader(csvfile, delimiter=delimiter, quotechar='"')
-        for row in reader:
-            if row[0] != 'NA' and row[0] != 'N/A':
-                csvlist.append(row)
-    return csvlist
+def OnReadOffensesLine(insert_sql, line, count):
+    a = line.split('\t')
+    insert_sql.append(
+        "INSERT INTO offenses (offense_code, offense_name, offense_class)"
+        "VALUES ({}, '{}', '{}');".format(a[2].strip(), a[0].strip(), a[1].strip()))
 
 
-# Reads a .csv file and returns its contents as a list.
-def read_population_data(filepath, delimiter):
+def OnReadConvictionsLine(insert_sql, line, count):
+    a = line.split('|')
+    insert_sql.append(
+        "INSERT INTO convictions (conviction_id, citizen_id, offense_code)"
+        "VALUES ('{}', '{}', '{}');".format(a[0].strip(), a[1].strip(), a[2].strip()))
+
+
+def read_txt_data(filepath, operation_id):
     # Using readline()
     file1 = open(filepath, encoding='utf-8')
     count = 0
@@ -157,17 +190,17 @@ def read_population_data(filepath, delimiter):
         if not line:
             break
 
-        print("Line{}: {}".format(count, line.strip()))
+        #print("Line{}: {}".format(count, line.strip()))
 
-        a = line.split('|')
-        insert_sql.append(
-            "INSERT INTO citizens (ssn, firstname, lastname, ethnicity, gender, dayOfBirth)"
-            "VALUES ({}, '{}', '{}', '{}', '{}', {});"
-                .format(count - 1, a[0], a[1], a[2], a[3], a[4]))
+        if operation_id == 0:
+            OnReadCitizensLine(insert_sql, line, count)
+        elif operation_id == 1:
+            OnReadOffensesLine(insert_sql, line, count)
+        elif operation_id == 2:
+            OnReadConvictionsLine(insert_sql, line, count)
 
     file1.close()
     run_insert_queries(insert_sql)
-
 
 
 # Replaces a null value with a 'null' string - necessary to prevent errors when printing.
@@ -183,67 +216,27 @@ def print_citizens(cursor, query):
     cursor.execute(query)
     columns = "| {:<9} | {:<25} | {:<25} | {:<4} | {:<4} | {:<10}"
     # Print column names.
-    print(columns.format('ssn', 'firstname', 'lastname', 'ethnicity', 'gender', 'dayOfBirth'))
+    print(columns.format('citizen_id', 'firstname', 'lastname', 'ethnicity', 'gender', 'date_of_birth'))
     # Print line to separate column names from tuples.
     print("-" * 220)
 
     # Change null values to 'null' strings before printing.
-    for (ssn, firstname, lastname, ethnicity, gender, dayOfBirth) in cursor:
-        print(columns.format(ssn, firstname, lastname, ethnicity, gender, dayOfBirth))
+    for (citizen_id, firstname, lastname, ethnicity, gender, dayOfBirth) in cursor:
+        print(columns.format(citizen_id, firstname, lastname, ethnicity, gender, dayOfBirth))
 
 
-# Prints a table of planets to the console.
-def print_planets(cursor, query):
+# Prints a table of citizens to the console.
+def print_offenses(cursor, query):
     cursor.execute(query)
-    columns = "| {:<15} | {:<15} | {:<15} | {:<8} | {:<25} | {:<40} | {:<42} | {:<15} | {:<15}"
+    columns = "| {:<8} | {:<20} | {:<100}"
     # Print column names.
-    print(columns.format('name', 'rotation_period', 'orbital_period', 'diameter', 'climate', 'gravity', 'terrain',
-                         'surface_water', 'population'))
+    print(columns.format('offense_code', 'offense_class', 'offense_name'))
     # Print line to separate column names from tuples.
     print("-" * 220)
 
     # Change null values to 'null' strings before printing.
-    for (
-    name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water, population) in cursor:
-        name = set_to_null_string(name)
-        rotation_period = set_to_null_string(rotation_period)
-        orbital_period = set_to_null_string(orbital_period)
-        diameter = set_to_null_string(diameter)
-        climate = set_to_null_string(climate)
-        gravity = set_to_null_string(gravity)
-        terrain = set_to_null_string(terrain)
-        surface_water = set_to_null_string(surface_water)
-        population = set_to_null_string(population)
-        print(columns.format(name, rotation_period, orbital_period, diameter, climate, gravity, terrain, surface_water,
-                             population))
-
-
-# Prints a table of species to the console.
-def print_species(cursor, query):
-    cursor.execute(query)
-    columns = "| {:<15} | {:<15} | {:<15} | {:<15} | {:<40} | {:<35} | {:<42} | {:<17} | {:<15} | {:<15}"
-    # Print column names.
-    print(columns.format('name', 'classification', 'designation', 'average_height', 'skin_colors', 'hair_colors',
-                         'eye_colors', 'average_lifespan', 'language', 'homeworld'))
-    # Print line to separate column names from tuples.
-    print("-" * 270)
-
-    # Change null values to 'null' strings before printing.
-    for (
-    name, classification, designation, average_height, skin_colors, hair_colors, eye_colors, average_lifespan, language,
-    homeworld) in cursor:
-        name = set_to_null_string(name)
-        classification = set_to_null_string(classification)
-        designation = set_to_null_string(designation)
-        average_height = set_to_null_string(average_height)
-        skin_colors = set_to_null_string(skin_colors)
-        hair_colors = set_to_null_string(hair_colors)
-        eye_colors = set_to_null_string(eye_colors)
-        average_lifespan = set_to_null_string(average_lifespan)
-        language = set_to_null_string(language)
-        homeworld = set_to_null_string(homeworld)
-        print(columns.format(name, classification, designation, average_height, skin_colors, hair_colors, eye_colors,
-                             average_lifespan, language, homeworld))
+    for (offense_code, offense_name, offense_class) in cursor:
+        print(columns.format(offense_code, offense_class, offense_name))
 
 
 # Prints the main menu.
@@ -271,24 +264,25 @@ except mysql.connector.Error as err:
         print(err)
 
 cursor.execute("DROP TABLE citizens")
+cursor.execute("DROP TABLE offenses")
+cursor.execute("DROP TABLE convictions")
 
 # Create tables.
 create_table_citizens(cursor)
-#create_table_species(cursor)
+create_table_offenses(cursor)
+create_table_convictions(cursor)
 
 # Read .csv data to lists.
-read_population_data('population.txt', '|')
-#specieslist = read_csv_to_list('species.csv')
+read_txt_data('population.txt', 0)
+read_txt_data('offenses.txt', 1)
+read_txt_data('convictions.txt', 2)
 
 #for citizen in citizens_list:
 #    print("{}, {}, {}, {}, {}, {}".format(citizen[0], citizen[1], citizen[2], citizen[3], citizen[4], citizen[5]))
 
 # Insert data from lists into tables.
-#insert_into_planets(cursor, planetslist)
-#insert_into_species(cursor, specieslist)
-
 print_citizens(cursor, 'SELECT * FROM citizens')
-# print_species(cursor, 'SELECT * FROM species')
+print_offenses(cursor, 'SELECT * FROM offenses')
 
 # Display menu until user enters 'Q'
 print('')
