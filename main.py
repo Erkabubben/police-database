@@ -25,7 +25,7 @@ def create_database(cursor, DB_NAME):
 
 # Defines a schema and attempts to create a citizens table in the database.
 def create_table_citizens(cursor):
-    create_citizens = "CREATE TABLE `citizens` (" \
+    create_table = "CREATE TABLE `citizens` (" \
                      "  `citizen_id` int(11) NOT NULL," \
                      "  `firstname` varchar(30) NOT NULL," \
                      "  `lastname` varchar(30) NOT NULL," \
@@ -34,29 +34,29 @@ def create_table_citizens(cursor):
                      "  `date_of_birth` int(9)," \
                      "  PRIMARY KEY (`citizen_id`)" \
                      ") ENGINE=InnoDB"
-    try_create_table(cursor, create_citizens)
+    try_create_table(cursor, create_table)
 
 
 # Defines a schema and attempts to create a citizens table in the database.
 def create_table_offenses(cursor):
-    create_citizens = "CREATE TABLE `offenses` (" \
+    create_table = "CREATE TABLE `offenses` (" \
                      "  `offense_code` varchar(8) NOT NULL," \
                      "  `offense_name` varchar(300) NOT NULL," \
                      "  `offense_class` varchar(30) NOT NULL," \
                      "  PRIMARY KEY (`offense_code`)" \
                      ") ENGINE=InnoDB"
-    try_create_table(cursor, create_citizens)
+    try_create_table(cursor, create_table)
 
 
 # Defines a schema and attempts to create a citizens table in the database.
 def create_table_convictions(cursor):
-    create_citizens = "CREATE TABLE `convictions` (" \
+    create_table = "CREATE TABLE `convictions` (" \
                      "  `conviction_id` varchar(8) NOT NULL," \
-                     "  `citizen_id` int(11) NOT NULL," \
+                     "  `convict_id` int(11) NOT NULL," \
                      "  `offense_code` varchar(8) NOT NULL," \
                      "  PRIMARY KEY (`conviction_id`)" \
                      ") ENGINE=InnoDB"
-    try_create_table(cursor, create_citizens)
+    try_create_table(cursor, create_table)
 
 
 # Attempts to create a table from the given schema query.
@@ -115,7 +115,7 @@ def OnReadOffensesLine(insert_sql, line, count):
 def OnReadConvictionsLine(insert_sql, line, count):
     a = line.split('|')
     insert_sql.append(
-        "INSERT INTO convictions (conviction_id, citizen_id, offense_code)"
+        "INSERT INTO convictions (conviction_id, convict_id, offense_code)"
         "VALUES ('{}', '{}', '{}');".format(a[0].strip(), a[1].strip(), a[2].strip()))
 
 

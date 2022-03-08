@@ -46,12 +46,31 @@ def on_search(values, window, cursor):
         elif values['gender_input_f']:
             inputs.append(('gender', 'f'))
     inputsAmount = 0
+    filters_query = ''
     for inp in inputs:
         if inputsAmount == 0:
-            query += " WHERE {} LIKE '{}'".format(inp[0], inp[1])
+            filters_query += " WHERE {} LIKE '{}'".format(inp[0], inp[1])
         elif inputsAmount > 0:
-            query += " AND {} LIKE '{}'".format(inp[0], inp[1])
+            filters_query += " AND {} LIKE '{}'".format(inp[0], inp[1])
         inputsAmount += 1
+
+    selectedOffenseCode = ''
+    if values['offense_list'] and values['offense_list'][0] != '':
+        selectedOffenseCode = values['offense_list'].split('|')[1].strip()
+        print(selectedOffenseCode)
+
+    if selectedOffenseCode != '':
+        query += " JOIN convictions ON convictions.convict_id = citizens.citizen_id WHERE convictions.offense_code = '{}'".format(selectedOffenseCode)
+        query = "SELECT citizen_id, firstname, lastname, nationality, gender, date_of_birth FROM ("\
+                + query + filters_query.replace('WHERE', 'AND') + ") AS T"
+
+        print(query)
+
+        cursor.execute(query)
+        for item in cursor:
+            print(item)
+    else:
+        query += filters_query
 
     window['results'].update(list_citizens(cursor, query))
 
