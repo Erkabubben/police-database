@@ -1,0 +1,564 @@
+Abandonment of a child 	E Felony 	260.00
+Abortion in the first degree 	D Felony 	125.45
+Abortion in the second degree 	E Felony 	125.40
+Absconding from a community treatment facility 	E Felony 	205.19
+Absconding from a furlough program 	A Misdemeanor 	205.18
+Absconding from temporary release in the first degree 	E Felony 	205.17
+Adultery 	B Misdemeanor 	255.17
+Advertisement or sale of unauthorized recordings in the first degree 	E Felony 	275.30
+Advertisement or sale of unauthorized recordings in the second degree 	A Misdemeanor 	275.25
+Aggravated assault upon a person less than eleven years old 	E Felony 	120.12
+Aggravated assault upon a police officer or a peace officer 	B Violent Felony 	120.11
+Aggravated cemetery desecration in the first degree 	D Felony 	145.27
+Aggravated cemetery desecration in the second degree 	E Felony 	145.26
+Aggravated criminal contempt 	D Felony 	215.52
+Aggravated criminal possession of a weapon 	C Felony 	265.19
+Aggravated criminal sale of cannabis 	C Felony 	222.65
+Aggravated criminally negligent homicide 	C Violent Felony 	125.11
+Aggravated enterprise corruption 	A-1 Felony 	460.22
+Aggravated family offense 	E Felony 	240.75
+Aggravated grand larceny of an automated teller machine 	C Felony 	155.43
+Aggravated harassment in the first degree 	E Felony 	240.31
+Aggravated harassment in the second degree 	A Misdemeanor 	240.30
+Aggravated harassment of an employee by an inmate 	E Felony 	240.32
+Aggravated insurance fraud 	D Felony 	176.35
+Aggravated interference with health care services in the first degree 	E Felony 	240.73
+Aggravated interference with health care services in the second degree 	E Felony 	240.72
+Aggravated manslaughter in the first degree 	B Violent Felony 	125.22
+Aggravated manslaughter in the second degree 	C Violent Felony 	125.21
+Aggravated murder 	A-I Felony 	125.26
+Aggravated sexual abuse in the first degree 	B Violent Felony 	130.70
+Aggravated sexual abuse in the second degree 	C Violent Felony 	130.67
+Aggravated sexual abuse in the third degree 	D Violent Felony 	130.66
+Aggravated unpermitted use of indoor pyrotechnics in the first degree 	D Violent Felony 	405.18
+Aggravated unpermitted use of indoor pyrotechnics in the second degree 	E Felony 	405.16
+Aggravated vehicular homicide 	B Felony 	125.14
+Appearance in public under the influence of narcotics or a drug other than alcohol 	Violation 	240.40
+Arson in the fifth degree 	A Misdemeanor 	150.01
+Arson in the first degree 	A-I Felony 	150.20
+Arson in the fourth degree 	E Felony 	150.05
+Arson in the second degree 	B Violent Felony 	150.15
+Arson in the third degree 	C Felony 	150.10
+Assault in the first degree 	B Violent Felony 	120.10
+Assault in the second degree 	D Violent Felony 	120.05
+Assault in the third degree 	A Misdemeanor 	120.00
+Assault on a judge 	C Violent Felony 	120.09
+Assault on a peace officer police officer fireman or emergency medical services professional 	C Violent Felony 	120.08
+Auto stripping in the first degree 	D Felony 	165.11
+Auto stripping in the second degree 	E Felony 	165.10
+Auto stripping in the third degree 	A Misdemeanor 	165.09
+Bail jumping in the first degree 	D Felony 	215.57
+Bail jumping in the second degree 	E Felony 	215.56
+Bail jumping in the third degree 	A Misdemeanor 	215.55
+Bigamy 	E Felony 	255.15
+Bribe giving for public office 	D Felony 	200.45
+Bribe receiving by a juror 	D Felony 	215.20
+Bribe receiving by a labor official 	D Felony 	180.25
+Bribe receiving by a witness 	D Felony 	215.05
+Bribe receiving for public office 	D Felony 	200.50
+Bribe receiving in the first degree 	B Felony 	200.12
+Bribe receiving in the second degree 	C Felony 	200.11
+Bribe receiving in the third degree 	D Felony 	200.10
+Bribery in the first degree 	B Felony 	200.04
+Bribery in the second degree 	C Felony 	200.03
+Bribery in the third degree 	D Felony 	200.00
+Bribing a juror 	D Felony 	215.19
+Bribing a labor official 	D Felony 	180.15
+Burglary in the first degree 	B Violent Felony 	140.30
+Burglary in the second degree 	C Violent Felony 	140.25
+Burglary in the third degree 	D Felony 	140.20
+Burn injury and wounds to be reported 	A Misdemeanor 	265.26
+Cemetery desecration in the first degree 	E Felony 	145.23
+Cemetery desecration in the second degree 	A Misdemeanor 	145.22
+Certain wounds to be reported 	A Misdemeanor 	265.25
+Coercion in the first degree 	D Felony 	135.36
+Coercion in the second degree 	A Misdemeanor 	135.60
+Commercial bribe receiving in the first degree 	E Felony 	180.08
+Commercial bribe receiving in the second degree 	A Misdemeanor 	180.05
+Commercial bribing in the first degree 	E Felony 	180.03
+Commercial bribing in the second degree 	A Misdemeanor 	180.00
+Compelling prostitution 	B Felony 	230.33
+Compounding a crime 	A Misdemeanor 	215.45
+Computer tampering in the first degree 	C Felony 	156.27
+Computer tampering in the fourth degree 	A Misdemeanor 	156.20
+Computer tampering in the second degree 	D Felony 	156.26
+Computer tampering in the third degree 	E Felony 	156.25
+Computer trespass 	E Felony 	156.10
+Conspiracy in the fifth degree 	A Misdemeanor 	105.05
+Conspiracy in the first degree 	A-I Felony 	105.17
+Conspiracy in the fourth degree 	E Felony 	105.10
+Conspiracy in the second degree 	B Felony 	105.15
+Conspiracy in the sixth degree 	B Misdemeanor 	105.00
+Conspiracy in the third degree 	D Felony 	105.13
+Corrupting the government in the first degree 	B Felony 	496.05
+Corrupting the government in the fourth degree 	E Felony 	496.02
+Corrupting the government in the second degree 	C Felony 	496.04
+Corrupting the government in the third degree 	D Felony 	496.03
+Course of sexual conduct against a child in the first degree 	B Violent Felony 	130.75
+Course of sexual conduct against a child in the second degree 	D Violent Felony 	130.80
+Creating a hazard 	B Misdemeanor 	270.10
+Crime of terrorism 	A-I Felony 	490.25
+Criminal possession of methamphetamine manufacturing material in the second degree 	A Misdemeanor 	220.70
+Criminal anarchy 	E Felony 	240.15
+Criminal contempt in the first degree 	E Felony 	215.51
+Criminal contempt in the second degree 	A Misdemeanor 	215.50
+Criminal contempt of a temporary state commission 	A Misdemeanor 	215.65
+Criminal contempt of the legislature 	A Misdemeanor 	215.60
+Criminal contempt of the state commission on judicial conduct 	A Misdemeanor 	215.66
+Criminal diversion of medical marihuana in the first degree 	E Felony 	179.10
+Criminal diversion of medical marihuana in the second degree 	B Misdemeanor 	179.11
+Criminal diversion of prescription medications and prescriptions in the first degree 	C Felony 	178.25
+Criminal diversion of prescription medications and prescriptions in the fourth degree 	A Misdemeanor 	178.10
+Criminal diversion of prescription medications and prescriptions in the third degree 	E Felony 	178.15
+Criminal facilitation in the first degree 	B Felony 	115.08
+Criminal facilitation in the fourth degree 	A Misdemeanor 	115.00
+Criminal facilitation in the second degree 	C Felony 	115.05
+Criminal facilitation in the third degree 	E Felony 	115.01
+Criminal impersonation in the first degree 	E Felony 	190.26
+Criminal impersonation in the second degree 	A Misdemeanor 	190.25
+Criminal injection of a narcotic drug 	E Felony 	220.46
+Criminal interference with health care services or religious worship in the first degree 	E Felony 	240.71
+Criminal interference with health care services or religious worship in the second degree 	A Misdemeanor 	240.70
+Criminal mischief in the first degree 	B Felony 	145.12
+Criminal mischief in the fourth degree 	A Misdemeanor 	145.00
+Criminal mischief in the second degree 	D Felony 	145.10
+Criminal mischief in the third degree 	E Felony 	145.05
+Criminal nuisance in the first degree 	E Felony 	240.46
+Criminal nuisance in the second degree 	B Misdemeanor 	240.45
+Criminal obstruction of breathing or blood circulation 	A Misdemeanor 	121.11
+Criminal possession of methamphetamine manufacturing material in the first degree 	E Felony 	220.71
+Criminal possession of a chemical weapon or biological weapon in the first degree 	A-I Felony 	490.45
+Criminal possession of a chemical weapon or biological weapon in the second degree 	B Violent Felony 	490.40
+Criminal possession of a chemical weapon or biological weapon in the third degree 	C Violent Felony 	490.37
+Criminal possession of a controlled substance in the fifth degree 	D Felony 	220.06
+Criminal possession of a controlled substance in the first degree 	A-I Felony 	220.21
+Criminal possession of a controlled substance in the fourth degree 	C Felony 	220.09
+Criminal possession of a controlled substance in the second degree 	A-II Felony 	220.18
+Criminal possession of a controlled substance in the seventh degree 	A Misdemeanor 	220.03
+Criminal possession of a controlled substance in the third degree 	B Felony 	220.16
+Criminal possession of a forged instrument in the first degree 	C Felony 	170.30
+Criminal possession of a forged instrument in the second degree 	D Felony 	170.25
+Criminal possession of a forged instrument in the third degree 	A Misdemeanor 	170.20
+Criminal possession of a taximeter accelerating device 	A Misdemeanor 	145.70
+Criminal possession of a weapon in the first degree 	B Violent Felony 	265.04
+Criminal possession of a weapon in the fourth degree 	A Misdemeanor 	265.01
+Criminal possession of a weapon in the second degree 	C Violent Felony 	265.03
+Criminal possession of a weapon in the third degree 	D Violent Felony 	265.02
+Criminal possession of an anti-security item 	B Misdemeanor 	170.47
+Criminal possession of cannabis in the first degree 	D Felony 	222.40
+Criminal possession of cannabis in the second degree. 	E Felony 	222.35
+Criminal possession of cannabis in the third degree 	A Misdemeanor 	222.30
+Criminal possession of computer related material 	E Felony 	156.35
+Criminal possession of forgery devices 	D Felony 	170.40
+Criminal possession of marihuana in the fifth degree 	B Misdemeanor 	221.10
+Criminal possession of marihuana in the first degree 	C Felony 	221.30
+Criminal possession of marihuana in the fourth degree 	A Misdemeanor 	221.15
+Criminal possession of marihuana in the second degree 	D Felony 	221.25
+Criminal possession of marihuana in the third degree 	E Felony 	221.20
+Criminal possession of precursors of controlled substances 	E Felony 	220.60
+Criminal possession of precursors of methamphetamine 	E Felony 	220.72
+Criminal possession of public benefit cards in the first degree 	C Felony 	158.50
+Criminal possession of public benefit cards in the second degree 	D Felony 	158.45
+Criminal possession of public benefit cards in the third degree 	E Felony 	158.40
+Criminal possession of stolen property in the fifth degree 	A Misdemeanor 	165.40
+Criminal possession of stolen property in the first degree 	B Felony 	165.54
+Criminal possession of stolen property in the fourth degree 	E Felony 	165.45
+Criminal possession of stolen property in the second degree 	C Felony 	165.52
+Criminal possession of stolen property in the third degree 	D Felony 	165.50
+Criminal purchase or disposal of a weapon 	D Felony 	265.17
+Criminal retention of medical marihuana 	A Misdemeanor 	179.15
+Criminal sale of a controlled substance in or near school grounds 	B Felony 	220.44
+Criminal sale of a controlled substance in the fifth degree 	D Felony 	220.31
+Criminal sale of a controlled substance in the first degree 	A-I Felony 	220.43
+Criminal sale of a controlled substance in the fourth degree 	C Felony 	220.34
+Criminal sale of a controlled substance in the second degree 	A-II Felony 	220.41
+Criminal sale of a controlled substance in the third degree 	B Felony 	220.39
+Criminal sale of a controlled substance to a child 	B Felony 	220.48
+Criminal sale of a firearm in the first degree 	B Violent Felony 	265.13
+Criminal sale of a firearm in the second degree 	C Violent Felony 	265.12
+Criminal sale of a firearm in the third degree 	D Violent Felony 	265.11
+Criminal sale of a firearm to a minor 	C Felony 	265.16
+Criminal sale of a firearm with the aid of a minor 	C Violent Felony 	265.14
+Criminal sale of a police uniform 	A Misdemeanor 	190.27
+Criminal sale of a prescription for a controlled substance or of a controlled substance by a practitioner or pharmacist 	C Felony 	220.65
+Criminal sale of cannabis in the first degree 	D Felony 	222.60
+Criminal sale of cannabis in the second degree 	E Felony 	222.55
+Criminal sale of cannabis in the third degree 	A Misdemeanor 	222.50
+Criminal sale of marihuana in the fifth degree 	B Misdemeanor 	221.35
+Criminal sale of marihuana in the first degree 	C Felony 	221.55
+Criminal sale of marihuana in the fourth degree 	A Misdemeanor 	221.40
+Criminal sale of marihuana in the second degree 	D Felony 	221.50
+Criminal sale of marihuana in the third degree 	E Felony 	221.45
+Criminal sexual act in the first degree 	B Violent Felony 	130.50
+Criminal sexual act in the second degree 	D Violent Felony 	130.45
+Criminal sexual act in the third degree 	E Felony 	130.40
+Criminal simulation 	A Misdemeanor 	170.45
+Criminal solicitation in the fifth degree 	Violation 	100.00
+Criminal solicitation in the first degree 	C Felony 	100.13
+Criminal solicitation in the fourth degree 	A Misdemeanor 	100.05
+Criminal solicitation in the second degree 	D Felony 	100.10
+Criminal solicitation in the third degree 	E Felony 	100.08
+Criminal tampering in the first degree 	D Felony 	145.20
+Criminal tampering in the second degree 	A Misdemeanor 	145.15
+Criminal tampering in the third degree 	B Misdemeanor 	145.14
+Criminal trespass in the first degree 	D Felony 	140.17
+Criminal trespass in the second degree 	A Misdemeanor 	140.15
+Criminal trespass in the third degree 	B Misdemeanor 	140.10
+Criminal use of a chemical weapon or biological weapon in the first degree 	A-I Felony 	490.55
+Criminal use of a chemical weapon or biological weapon in the second degree 	A-II Felony 	490.50
+Criminal use of a chemical weapon or biological weapon in the third degree 	B Violent Felony 	490.47
+Criminal use of a firearm in the first degree 	B Violent Felony 	265.09
+Criminal use of a firearm in the second degree 	C Violent Felony 	265.08
+Criminal use of a public benefit card in the first degree 	E Felony 	158.35
+Criminal use of a public benefit card in the second degree 	A Misdemeanor 	158.30
+Criminal use of an access device in the first degree 	E Felony 	190.76
+Criminal use of an access device in the second degree 	A Misdemeanor 	190.75
+Criminal usury in the first degree 	C Felony 	190.42
+Criminally negligent homicide 	E Felony 	125.10
+Criminally possessing a hypodermic instrument 	A Misdemeanor 	220.45
+Criminally using drug paraphernalia in the first degree 	D Felony 	220.55
+Criminally using drug paraphernalia in the second degree 	A Misdemeanor 	220.50
+Custodial interference in the first degree 	E Felony 	135.50
+Custodial interference in the second degree 	A Misdemeanor 	135.45
+Defrauding the government 	E Felony 	195.20
+Directing a laser at an aircraft in the first degree 	E Felony 	240.77
+Directing a laser at an aircraft in the second degree 	A Misdemeanor 	240.76
+Disorderly conduct 	Violation 	240.20
+Disruption or disturbance of religious service 	A Misdemeanor 	240.21
+Disseminating a false registered sex offender notice 	A Misdemeanor 	240.48
+Disseminating indecent material to minors in the first degree 	D Felony 	235.22
+Disseminating indecent material to minors in the second degree 	E Felony 	235.21
+Dissemination of an unlawful surveillance image in the first degree 	E Felony 	250.60
+Dissemination of an unlawful surveillance image in the second degree 	A Misdemeanor 	250.55
+Divulging an eavesdropping warrant 	A Misdemeanor 	250.20
+Eavesdropping 	E Felony 	250.05
+Employer unlawfully penalizing witness or victim 	B Misdemeanor 	215.14
+Endangering the welfare of a child 	A Misdemeanor 	260.10
+Endangering the welfare of a vulnerable elderly person, or an incompetent or physically disabled person in the first degree 	D Felony 	260.34
+Endangering the welfare of a vulnerable elderly person, or an incompetent or physically disabled person in the second degree 	E Felony 	260.32
+Endangering the welfare of an incompetent or physically disabled person in the first degree 	E Felony 	260.25
+Endangering the welfare of an incompetent or physically disabled person in the second degree 	A Misdemeanor 	260.24
+Enterprise corruption 	B Felony 	460.20
+Escape in the first degree 	D Felony 	205.15
+Escape in the second degree 	E Felony 	205.10
+Escape in the third degree 	A Misdemeanor 	205.05
+Exposure of a person 	Violation 	245.01
+Facilitating a sex offense with a controlled substance 	D Violent Felony 	130.90
+Facilitating a sexual performance by a child with a controlled substance or alcohol 	B Felony 	263.30
+Failing to report criminal communications 	B Misdemeanor 	250.35
+Failing to respond to an appearance ticket 	Violation 	215.58
+Failure to disclose the origin of a recording in the first degree 	E Felony 	275.40
+Failure to disclose the origin of a recording in the second degree 	A Misdemeanor 	275.35
+Failure to report wiretapping 	B Misdemeanor 	250.15
+False advertising 	A Misdemeanor 	190.20
+False personation 	B Misdemeanor 	190.23
+Falsely reporting an incident in the first degree 	D Violent Felony 	240.60
+Falsely reporting an incident in the second degree 	E Violent Felony 	240.55
+Falsely reporting an incident in the third degree 	A Misdemeanor 	240.50
+Falsifying business records in the first degree 	E Felony 	175.10
+Falsifying business records in the second degree 	A Misdemeanor 	175.05
+Female genital mutilation 	E Felony 	130.85
+Forcible touching 	A Misdemeanor 	130.52
+Forgery in the first degree 	C Felony 	170.15
+Forgery in the second degree 	D Felony 	170.10
+Forgery in the third degree 	A Misdemeanor 	170.05
+Forgery of a vehicle identification number 	E Felony 	170.65
+Fortune telling 	B Misdemeanor 	165.35
+Fraud in insolvency 	A Misdemeanor 	185.00
+Fraud involving a security interest 	A Misdemeanor 	185.05
+Fraudulent accosting 	A Misdemeanor 	165.30
+Fraudulent disposition of mortgaged property 	A Misdemeanor 	185.10
+Fraudulent disposition of property subject to a conditional sale contract 	A Misdemeanor 	185.15
+Fraudulently obtaining a signature 	A Misdemeanor 	165.20
+Gaming fraud in the first degree 	E Felony 	225.60
+Gaming fraud in the second degree 	A Misdemeanor 	225.55
+Gang assault in the first degree 	B Violent Felony 	120.07
+Gang assault in the second degree 	C Violent Felony 	120.06
+Giving unlawful gratuities 	A Misdemeanor 	200.30
+Grand larceny in the first degree 	B Felony 	155.42
+Grand larceny in the fourth degree 	E Felony 	155.30
+Grand larceny in the second degree 	C Felony 	155.40
+Grand larceny in the third degree 	D Felony 	155.35
+Harassment in the first degree 	B Misdemeanor 	240.25
+Harassment in the second degree 	Violation 	240.26
+Harassment of a rent regulated tenant 	E Felony 	241.05
+Harming a service animal in the first degree 	E Felony 	242.15
+Harming a service animal in the second degree 	A Misdemeanor 	242.10
+Harming an animal trained to aid a person with a disability in the first degree 	A Misdemeanor 	195.12
+Harming an animal trained to aid a person with a disability in the second degree 	B Misdemeanor 	195.11
+Hazing in the first degree 	A Misdemeanor 	120.16
+Hazing in the second degree 	Violation 	120.17
+Health care fraud in the fifth degree 	A Misdemeanor 	177.05
+Health care fraud in the first degree 	B Felony 	177.25
+Health care fraud in the fourth degree 	E Felony 	177.10
+Health care fraud in the second degree 	C Felony 	177.20
+Health care fraud in the third degree 	D Felony 	177.15
+Hindering prosecution in the first degree 	D Felony 	205.65
+Hindering prosecution in the second degree 	E Felony 	205.60
+Hindering prosecution in the third degree 	A Misdemeanor 	205.55
+Hindering prosecution of terrorism in the first degree 	B Violent Felony 	490.35
+Hindering prosecution of terrorism in the second degree 	C Violent Felony 	490.30
+Identity theft in the first degree 	D Felony 	190.80
+Identity theft in the second degree 	E Felony 	190.79
+Identity theft in the third degree 	A Misdemeanor 	190.78
+Illegal possession of a vehicle identification number 	E Felony 	170.70
+Immigrant assistance services fraud in the first degree 	E Felony 	190.89
+Immigrant assistance services fraud in the second degree 	A Misdemeanor 	190.87
+Impairing the integrity of a government licensing examination 	D Felony 	200.55
+Impairing the integrity of a pari-mutuel betting system in the second degree 	E Felony 	180.52
+Incest in the first degree 	B Violent Felony 	255.27
+Incest in the second degree 	D Felony 	255.26
+Incest in the third degree 	E Felony 	255.25
+Inciting to riot 	A Misdemeanor 	240.08
+Insurance fraud in the fifth degree 	A Misdemeanor 	176.10
+Insurance fraud in the first degree 	B Felony 	176.30
+Insurance fraud in the fourth degree 	E Felony 	176.15
+Insurance fraud in the second degree 	C Felony 	176.25
+Insurance fraud in the third degree 	D Felony 	176.20
+Interference harassment or intimidation of a service animal 	B Misdemeanor 	242.05
+Intimidating a victim or witness in the first degree 	B Violent Felony 	215.17
+Intimidating a victim or witness in the second degree 	D Violent Felony 	215.16
+Intimidating a victim or witness in the third degree 	E Felony 	215.15
+Issuing a bad check 	B Misdemeanor 	190.05
+Issuing a false certificate 	E Felony 	175.40
+Issuing a false financial statement 	A Misdemeanor 	175.45
+Issuing abortional articles 	B Misdemeanor 	125.60
+Jostling 	A Misdemeanor 	165.25
+Kidnapping in the first degree 	A-I Felony 	135.25
+Kidnapping in the second degree 	B Violent Felony 	135.20
+Killing or injuring a police animal 	A Misdemeanor 	195.06
+Labor trafficking 	D Felony 	135.35
+Licenses to carry possess repair and dispose of firearms 	A Misdemeanor 	400.00
+Life settlement fraud in the fifth degree 	A Misdemeanor 	176.45
+Life settlement fraud in the first degree 	B Felony 	176.65
+Life settlement fraud in the fourth degree 	E Felony 	176.50
+Life settlement fraud in the second degree 	C Felony 	176.60
+Loitering 	Violation 	240.35
+Loitering for the purpose of engaging in a prostitution offense 	A Misdemeanor 	240.37
+Loitering in the first degree 	B Misdemeanor 	240.36
+Luring a child 	E Felony 	120.70
+Making a false statement of credit terms 	A Misdemeanor 	190.55
+Making a punishable false written statement 	A Misdemeanor 	210.45
+Making a terroristic threat 	D Violent Felony 	490.20
+Making an apparently sworn false statement in the first degree 	E Felony 	210.40
+Making an apparently sworn false statement in the second degree 	A Misdemeanor 	210.35
+Making graffiti 	A Misdemeanor 	145.60
+Manipulation of gaming outcomes at an authorized gaming establishment 	A Misdemeanor 	225.90
+Manslaughter in the first degree 	B Violent Felony 	125.20
+Manslaughter in the second degree 	C Felony 	125.15
+Manufacture of unauthorized recordings in the first degree 	E Felony 	275.10
+Manufacture of unauthorized recordings in the second degree 	A Misdemeanor 	275.05
+Manufacture or sale of an unauthorized recording of a performance in the first degree 	E Felony 	275.20
+Manufacture or sale of an unauthorized recording of a performance in the second degree 	A Misdemeanor 	275.15
+Manufacture transport disposition and defacement of weapons and dangerous instruments and appliances 	A Misdemeanor 	265.10
+Menacing a police officer or peace officer 	D Violent Felony 	120.18
+Menacing in the first degree 	E Felony 	120.13
+Menacing in the second degree 	A Misdemeanor 	120.14
+Menacing in the third degree 	B Misdemeanor 	120.15
+Misapplication of property 	A Misdemeanor 	165.00
+Misconduct by a juror in the first degree 	A Misdemeanor 	215.30
+Misconduct by a juror in the second degree 	Violation 	215.28
+Misconduct by corporate official 	B Misdemeanor 	190.35
+Misrepresentation by a child day care provider 	A Misdemeanor 	260.31*2
+Money laundering in support of terrorism in the first degree 	B Felony 	470.24
+Money laundering in support of terrorism in the fourth degree 	E Felony 	470.21
+Money laundering in support of terrorism in the second degree 	C Felony 	470.23
+Money laundering in support of terrorism in the third degree 	D Felony 	470.22
+Money laundering in the first degree 	B Felony 	470.20
+Money laundering in the fourth degree 	E Felony 	470.05
+Money laundering in the second degree 	C Felony 	470.15
+Money laundering in the third degree 	D Felony 	470.10
+Murder in the first degree 	A-I Felony 	125.27
+Murder in the second degree 	A-I Felony 	125.25
+Non-support of a child in the first degree 	E Felony 	260.06
+Non-support of a child in the second degree 	A Misdemeanor 	260.05
+Obscenity in the first degree 	D Felony 	235.07
+Obscenity in the second degree 	E Felony 	235.06
+Obscenity in the third degree 	A Misdemeanor 	235.05
+Obstructing emergency medical services 	A Misdemeanor 	195.16
+Obstructing governmental administration by means of a self-defense spray device 	D Felony 	195.08
+Obstructing governmental administration in the second degree 	A Misdemeanor 	195.05
+Obstruction of governmental duties by means of a bomb destructive device explosive or hazardous substance 	D Felony 	195.17
+Offensive exhibition 	Violation 	245.05
+Offering a false instrument for filing in the first degree 	E Felony 	175.35
+Offering a false instrument for filing in the second degree 	A Misdemeanor 	175.30
+Official misconduct 	A Misdemeanor 	195.00
+Operating as a major trafficker 	A-I Felony 	220.77
+Patronizing a prostitute in the first degree 	D Felony 	230.06
+Patronizing a prostitute in the second degree 	E Felony 	230.05
+Patronizing a prostitute in the third degree 	A Misdemeanor 	230.04
+Perjury in the first degree 	D Felony 	210.15
+Perjury in the second degree 	E Felony 	210.10
+Perjury in the third degree 	A Misdemeanor 	210.05
+Permitting prostitution 	B Misdemeanor 	230.40
+Persistent sexual abuse 	E Violent Felony 	130.53
+Petit larceny 	A Misdemeanor 	155.25
+Placing a false bomb or hazardous substance in a sports stadium or arena mass transportation facility or enclosed shopping mall 	D Violent Felony 	240.63
+Placing a false bomb or hazardous substance in the first degree 	D Violent Felony 	240.62
+Placing a false bomb or hazardous substance in the second degree 	E Violent Felony 	240.61
+Possessing a sexual performance by a child 	E Felony 	263.16
+Possessing an obscene sexual performance by a child 	E Felony 	263.11
+Possession of a gambling device 	A Misdemeanor 	225.30
+Possession of burglar`s tools 	A Misdemeanor 	140.35
+Possession of eavesdropping devices 	A Misdemeanor 	250.10
+Possession of gambling records in the first degree 	E Felony 	225.20
+Possession of gambling records in the second degree 	A Misdemeanor 	225.15
+Possession of graffiti instruments 	B Misdemeanor 	145.65
+Possession of unlawful gaming property in the first degree 	D Felony 	225.80
+Possession of unlawful gaming property in the second degree 	E Felony 	225.75
+Possession of unlawful gaming property in the third degree 	A Misdemeanor 	225.70
+Possession of usurious loan records 	A Misdemeanor 	190.45
+Predatory sexual assault 	A-II Felony 	130.95
+Predatory sexual assault against a child. 	A-II Felony 	130.96
+Prohibited use of weapons 	A Misdemeanor 	265.35
+Promoting a sexual performance by a child 	D Felony 	263.15
+Promoting a suicide attempt 	E Felony 	120.30
+Promoting an obscene sexual performance by a child 	D Felony 	263.10
+Promoting gambling in the first degree 	E Felony 	225.10
+Promoting gambling in the second degree 	A Misdemeanor 	225.05
+Promoting prison contraband in the first degree 	D Felony 	205.25
+Promoting prison contraband in the second degree 	A Misdemeanor 	205.20
+Promoting prostitution in a school zone 	E Felony 	230.19
+Promoting prostitution in the first degree 	B Felony 	230.32
+Promoting prostitution in the fourth degree 	A Misdemeanor 	230.20
+Promoting prostitution in the second degree 	C Felony 	230.30
+Promoting prostitution in the third degree 	D Felony 	230.25
+Promoting the exposure of a person 	Violation 	245.02
+Prostitution 	B Misdemeanor 	230.00
+Prostitution in a school zone 	A Misdemeanor 	230.03
+Providing a juror with a gratuity 	A Misdemeanor 	215.22
+Public display of offensive sexual material 	A Misdemeanor 	245.11
+Public lewdness 	B Misdemeanor 	245.00
+Public lewdness in the first degree 	A Misdemeanor 	245.03
+Rape in the first degree 	B Violent Felony 	130.35
+Rape in the second degree 	D Violent Felony 	130.30
+Rape in the third degree 	E Felony 	130.25
+Receiving reward for official misconduct in the first degree 	C Felony 	200.27
+Receiving reward for official misconduct in the second degree 	E Felony 	200.25
+Receiving unlawful gratuities 	A Misdemeanor 	200.35
+Reckless assault of a child 	D Violent Felony 	120.02
+Reckless assault of a child by a child day care provider 	E Felony 	120.01
+Reckless endangerment in the first degree 	D Felony 	120.25
+Reckless endangerment in the second degree 	A Misdemeanor 	120.20
+Reckless endangerment of property 	B Misdemeanor 	145.25
+Refusing to aid a peace or a police officer 	B Misdemeanor 	195.10
+Rent gouging in the first degree 	E Felony 	180.57
+Rent gouging in the second degree 	A Misdemeanor 	180.56
+Rent gouging in the third degree 	B Misdemeanor 	180.55
+Residential mortgage fraud in the fifth degree 	A Misdemeanor 	187.05
+Residential mortgage fraud in the first degree 	B Felony 	187.25
+Residential mortgage fraud in the fourth degree 	E Felony 	187.10
+Residential mortgage fraud in the second degree 	C Felony 	187.20
+Residential mortgage fraud in the third degree 	D Felony 	187.15
+Rewarding official misconduct in the first degree 	C Felony 	200.22
+Rewarding official misconduct in the second degree 	E Felony 	200.20
+Riot in the first degree 	E Felony 	240.06
+Riot in the second degree 	A Misdemeanor 	240.05
+Robbery in the first degree 	B Violent Felony 	160.15
+Robbery in the second degree 	C Violent Felony 	160.10
+Robbery in the third degree 	D Felony 	160.05
+Safe storage of rifles, shotguns, and firearms 	A Misdemeanor 	265.45
+Scheme to defraud in the first degree 	E Felony 	190.65
+Scheme to defraud in the second degree 	A Misdemeanor 	190.60
+Scheme to defraud the state by unlawfully selling prescriptions 	A Misdemeanor 	190.70
+Self-abortion in the first degree 	A Misdemeanor 	125.55
+Self-abortion in the second degree 	B Misdemeanor 	125.50
+Sellers of ammunition 	Violation 	400.03
+Sexual abuse in the first degree 	D Violent Felony 	130.65
+Sexual abuse in the second degree 	A Misdemeanor 	130.60
+Sexual abuse in the third degree 	B Misdemeanor 	130.55
+Sexual misconduct 	A Misdemeanor 	130.20
+Soliciting or providing support for an act of terrorism in the first degree 	C Violent Felony 	490.15
+Soliciting or providing support for an act of terrorism in the second degree 	D Violent Felony 	490.10
+Sports bribe receiving 	E Felony 	180.45
+Stalking in the first degree 	D Violent Felony 	120.60
+Stalking in the fourth degree 	B Misdemeanor 	120.45
+Stalking in the second degree 	E Felony 	120.55
+Stalking in the third degree 	A Misdemeanor 	120.50
+Substitution of children 	E Felony 	135.55
+Tampering with a consumer product in the first degree 	E Felony 	145.45
+Tampering with a consumer product in the second degree 	A Misdemeanor 	145.40
+Tampering with a juror in the first degree 	A Misdemeanor 	215.25
+Tampering with a juror in the second degree 	B Misdemeanor 	215.23
+Tampering with a sports contest in the first degree 	E Felony 	180.51
+Tampering with a sports contest in the second degree 	A Misdemeanor 	180.50
+Tampering with a witness in the first degree 	B Felony 	215.13
+Tampering with a witness in the fourth degree 	A Misdemeanor 	215.10
+Tampering with a witness in the second degree 	D Felony 	215.12
+Tampering with a witness in the third degree 	E Felony 	215.11
+Tampering with physical evidence 	E Felony 	215.40
+Tampering with private communications 	B Misdemeanor 	250.25
+Tampering with public records in the first degree 	D Felony 	175.25
+Tampering with public records in the second degree 	A Misdemeanor 	175.20
+Theft of services 	A Misdemeanor 	165.15
+Trademark counterfeiting in the second degree 	E Felony 	165.72
+Trademark counterfeiting in the third degree 	A Misdemeanor 	165.71
+Trespass 	Violation 	140.05
+Unauthorized operation of a recording device in a motion picture or live theater in the first degree 	E Felony 	275.34
+Unauthorized operation of a recording device in a motion picture or live theater in the second degree 	A Misdemeanor 	275.33
+Unauthorized radio transmission 	A Misdemeanor 	190.72
+Unauthorized sale of certain transportation services 	B Misdemeanor 	165.16
+Unauthorized use of a computer 	A Misdemeanor 	156.05
+Unauthorized use of a vehicle in the first degree 	D Felony 	165.08
+Unauthorized use of a vehicle in the second degree 	E Felony 	165.06
+Unauthorized use of a vehicle in the third degree 	A Misdemeanor 	165.05
+Unlawful possession of a large capacity ammunition feeding 	A Misdemeanor 	265.36
+Unlawful assembly 	B Misdemeanor 	240.10
+Unlawful collection practices 	B Misdemeanor 	190.50
+Unlawful disclosure of an indictment 	B Misdemeanor 	215.75
+Unlawful dissemination or publication of an intimate image. 	A Misdemeanor 	245.15
+Unlawful disposal of methamphetamine laboratory material 	E Felony 	220.76
+Unlawful disposition of assets subject to forfeiture 	A Misdemeanor 	215.80
+Unlawful duplication of computer related material in the first degree 	E Felony 	156.30
+Unlawful duplication of computer related material in the second degree 	B Misdemeanor 	156.29
+Unlawful fleeing a police officer in a motor vehicle in the first degree 	D Felony 	270.35
+Unlawful fleeing a police officer in a motor vehicle in the second degree 	E Felony 	270.30
+Unlawful fleeing a police officer in a motor vehicle in the third degree 	A Misdemeanor 	270.25
+Unlawful grand jury disclosure 	E Felony 	215.70
+Unlawful imprisonment in the first degree 	E Felony 	135.10
+Unlawful imprisonment in the second degree 	A Misdemeanor 	135.05
+Unlawful manufacture of methamphetamine in the first degree 	B Felony 	220.75
+Unlawful manufacture of methamphetamine in the second degree 	C Felony 	220.74
+Unlawful manufacture of methamphetamine in the third degree 	D Felony 	220.73
+Unlawful manufacture, sale, distribution, marking, altering or modification of equipment and devices associated with gaming 	A Misdemeanor 	225.95
+Unlawful possession of a skimmer device in the first degree 	E Felony 	190.86
+Unlawful possession of a skimmer device in the second degree 	A Misdemeanor 	190.85
+Unlawful possession of certain ammunition feeding devices 	B Misdemeanor 	265.37
+Unlawful possession of marihuana 	Violation 	221.05
+Unlawful possession of personal identification information in the first degree 	D Felony 	190.83
+Unlawful possession of personal identification information in the second degree 	E Felony 	190.82
+Unlawful possession of personal identification information in the third degree 	A Misdemeanor 	190.81
+Unlawful possession of radio devices 	B Misdemeanor 	140.40
+Unlawful prevention of public access to records 	Violation 	240.65
+Unlawful sale of cannabis 	Violation 	222.45
+Unlawful surveillance in the first degree 	D Felony 	250.50
+Unlawful surveillance in the second degree 	E Felony 	250.45
+Unlawful use of credit card debit card or public benefit card 	A Misdemeanor 	165.17
+Unlawful use of secret scientific material 	E Felony 	165.07
+Unlawful wearing of a body vest 	E Felony 	270.20
+Unlawfully concealing a will 	E Felony 	190.30
+Unlawfully dealing with a child in the first degree 	A Misdemeanor 	260.20
+Unlawfully dealing with a child in the second degree 	B Misdemeanor 	260.21
+Unlawfully dealing with fireworks and dangerous fireworks 	B Misdemeanor 	270.00
+Unlawfully issuing a dissolution decree 	A Misdemeanor 	255.05
+Unlawfully possessing or selling noxious material 	B Misdemeanor 	270.05
+Unlawfully posting advertisements 	Violation 	145.30
+Unlawfully procuring a marriage license 	A Misdemeanor 	255.10
+Unlawfully refusing to yield a party line 	B Misdemeanor 	270.15
+Unlawfully solemnizing a marriage 	A Misdemeanor 	255.00
+Unlawfully using slugs in the first degree 	E Felony 	170.60
+Unlawfully using slugs in the second degree 	B Misdemeanor 	170.55
+Unpermitted use of indoor pyrotechnics in the second degree 	A Misdemeanor 	405.12
+Use of a child in a sexual performance 	C Felony 	263.05
+Use of a child to commit a controlled substance offense 	E Felony 	220.28
+Use of counterfeit, unapproved or unlawful wagering instruments 	A Misdemeanor 	225.65
+Use of unlawful gaming property 	E Felony 	225.85
+Vehicular assault in the first degree 	D Felony 	120.04
+Vehicular assault in the second degree 	E Felony 	120.03
+Vehicular manslaughter in the first degree 	C Felony 	125.13
+Vehicular manslaughter in the second degree 	D Felony 	125.12
+Welfare fraud in the fifth degree 	A Misdemeanor 	158.05
+Welfare fraud in the first degree 	B Felony 	158.25
+Welfare fraud in the fourth degree 	E Felony 	158.10
+Welfare fraud in the second degree 	C Felony 	158.20
+Welfare fraud in the third degree 	D Felony 	158.15
