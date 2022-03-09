@@ -1,6 +1,7 @@
 import mysql.connector
 from mysql.connector import errorcode
 import gui
+import tables
 import csv
 
 cnx = mysql.connector.connect(user='root',
@@ -21,56 +22,6 @@ def create_database(cursor, DB_NAME):
     except mysql.connector.Error as err:
         print("Failed to create database {}".format(err))
         exit(1)
-
-
-# Defines a schema and attempts to create a citizens table in the database.
-def create_table_citizens(cursor):
-    create_table = "CREATE TABLE `citizens` (" \
-                     "  `citizen_id` int(11) NOT NULL," \
-                     "  `firstname` varchar(30) NOT NULL," \
-                     "  `lastname` varchar(30) NOT NULL," \
-                     "  `nationality` varchar(3)," \
-                     "  `gender` char(1)," \
-                     "  `date_of_birth` int(9)," \
-                     "  PRIMARY KEY (`citizen_id`)" \
-                     ") ENGINE=InnoDB"
-    try_create_table(cursor, create_table)
-
-
-# Defines a schema and attempts to create a citizens table in the database.
-def create_table_offenses(cursor):
-    create_table = "CREATE TABLE `offenses` (" \
-                     "  `offense_code` varchar(8) NOT NULL," \
-                     "  `offense_name` varchar(300) NOT NULL," \
-                     "  `offense_class` varchar(30) NOT NULL," \
-                     "  PRIMARY KEY (`offense_code`)" \
-                     ") ENGINE=InnoDB"
-    try_create_table(cursor, create_table)
-
-
-# Defines a schema and attempts to create a citizens table in the database.
-def create_table_convictions(cursor):
-    create_table = "CREATE TABLE `convictions` (" \
-                     "  `conviction_id` varchar(8) NOT NULL," \
-                     "  `convict_id` int(11) NOT NULL," \
-                     "  `offense_code` varchar(8) NOT NULL," \
-                     "  PRIMARY KEY (`conviction_id`)" \
-                     ") ENGINE=InnoDB"
-    try_create_table(cursor, create_table)
-
-
-# Attempts to create a table from the given schema query.
-def try_create_table(cursor, query):
-    try:
-        print("Creating table: " + query)
-        cursor.execute(query)
-    except mysql.connector.Error as err:
-        if err.errno == errorcode.ER_TABLE_EXISTS_ERROR:
-            print("Table already exists.")
-        else:
-            print(err.msg)
-    else:
-        print("OK")
 
 
 # Replaces NA and N/A strings with null values.
@@ -203,9 +154,9 @@ if (reset_tables):
     cursor.execute("DROP TABLE convictions")
 
     # Create tables.
-    create_table_citizens(cursor)
-    create_table_offenses(cursor)
-    create_table_convictions(cursor)
+    tables.create_table_citizens(cursor)
+    tables.create_table_offenses(cursor)
+    tables.create_table_convictions(cursor)
 
     # Read .csv data to lists.
     read_txt_data('population.txt', 0)
@@ -220,58 +171,5 @@ print_citizens(cursor, 'SELECT * FROM citizens')
 print_offenses(cursor, 'SELECT * FROM offenses')
 #print_convictions(cursor, 'SELECT * FROM convictions')
 
-# Display menu until user enters 'Q'
-print('')
-selected = 'Q'
-while selected != 'Q':
-    #print_menu()
-    #selected = input()
-    # User selects option 1: List all planets.
-    if selected == '1':
-        print_planets(cursor, 'SELECT * FROM planets')
-    # User selects option 2: Search for planet details.
-    if selected == '2':
-        print('Enter planet name:')
-        planetname = input()
-        print_planets(cursor, "SELECT * FROM planets WHERE name = '{}'".format(planetname))
-        input()
-    # User selects option 3: Search for species with height higher than given number.
-    if selected == '3':
-        print('Enter species height:')
-        height = input()
-        try:
-            height = int(height)
-            print_species(cursor, "SELECT * FROM species WHERE average_height > {}".format(height))
-            input()
-        except Exception as err:
-            print('Incorrect input - height must be a number.')
-    # User selects option 4: What is the most likely desired climate of the given species?
-    if selected == '4':
-        print('Enter species name:')
-        speciesname = input()
-        cursor.execute("SELECT climate FROM planets, species WHERE planets.name = species.homeworld AND species.name = '{}'".format(speciesname))
-        for row in cursor:
-            if isinstance(row[0], str):
-                print('Preferred climate: ' + row[0])
-                input()
-    # User selects option 5: What is the average lifespan per species classification??
-    if selected == '5':
-        # Get a list of all classifications in the species table.
-        cursor.execute("SELECT classification FROM species")
-        classifications = []
-        for row in cursor:
-            if not row[0] in classifications:
-                classifications.append(row[0])
-        # Loop through the classifications list and display average lifespan.
-        for classification in classifications:
-            cursor.execute(
-                "SELECT AVG(average_lifespan) FROM species WHERE classification = '{}'".format(classification))
-            for r in cursor:
-                if not r[0] is None:
-                    print(classification + ': ' + str(r[0]))
-        # Await user input before proceeding.
-        input()
-    # Always print a blank line before re-printing menu.
-    print('')
 
 gui.display_gui(cursor)
