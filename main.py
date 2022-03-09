@@ -51,9 +51,9 @@ def run_insert_queries(queries):
 def OnReadCitizensLine(insert_sql, line, count):
     a = line.split('|')
     insert_sql.append(
-        "INSERT INTO citizens (citizen_id, firstname, lastname, nationality, gender, date_of_birth)"
-        "VALUES ({}, '{}', '{}', '{}', '{}', {});"
-            .format(count - 1, a[0].replace('\'', ' '), a[1].replace('\'', ' '), a[2], a[3], a[4]))
+        "INSERT INTO citizens (citizen_id, firstname, lastname, nationality, gender, date_of_birth, total_convictions)"
+        "VALUES ({}, '{}', '{}', '{}', '{}', {}, {});"
+            .format(count - 1, a[0].replace('\'', ' '), a[1].replace('\'', ' '), a[2], a[3], a[4], a[5]))
 
 
 def OnReadOffensesLine(insert_sql, line, count):
@@ -110,15 +110,15 @@ def set_to_null_string(val):
 # Prints a table of citizens to the console.
 def print_citizens(cursor, query):
     cursor.execute(query)
-    columns = "| {:<9} | {:<25} | {:<25} | {:<4} | {:<4} | {:<10}"
+    columns = "| {:<9} | {:<25} | {:<25} | {:<4} | {:<4} | {:<10} | {:<17}"
     # Print column names.
-    print(columns.format('citizen_id', 'firstname', 'lastname', 'nationality', 'gender', 'date_of_birth'))
+    print(columns.format('citizen_id', 'firstname', 'lastname', 'nationality', 'gender', 'date_of_birth', 'total_convictions'))
     # Print line to separate column names from tuples.
     print("-" * 220)
 
     # Change null values to 'null' strings before printing.
-    for (citizen_id, firstname, lastname, nationality, gender, dayOfBirth) in cursor:
-        print(columns.format(citizen_id, firstname, lastname, nationality, gender, dayOfBirth))
+    for (citizen_id, firstname, lastname, nationality, gender, dayOfBirth, total_convictions) in cursor:
+        print(columns.format(citizen_id, firstname, lastname, nationality, gender, dayOfBirth, total_convictions))
 
 
 # Prints a table of citizens to the console.

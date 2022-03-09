@@ -1,33 +1,36 @@
 import PySimpleGUI as sg
 import tables
 
-citizen_columns = "| {:<9} | {:<25} | {:<25} | {:<20} | {:<6} | {:<10}"
-conviction_columns = "| {:<8} | {:<8} | {:<20} | {:<100}"
+citizen_columns = "| {:<9} | {:<23} | {:<23} | {:<18} | {:<6} | {:<13} | {:<10}"
+conviction_columns = "| {:<8} | {:<8} | {:<16} | {:<200}"
 current_year = 2022
 table_font = 'Courier New'
 table_font_size = 10
+inputs_width = 120
 
 def display_gui(cursor):
     sg.theme('DarkAmber')  # Add a touch of color
     # All the stuff inside your window.
-    layout = [[sg.Text('PoliceDB')],
-              [sg.Text('Firstname'), sg.InputText(key='firstname_input'), sg.Text('Lastname'), sg.InputText(key='lastname_input')],
-              [sg.Text('Nationality'), sg.InputText(key='nationality_input'),
+    layout = [[sg.Text('ID'), sg.InputText(key='id_input', size=(11)), sg.Text('Firstname'), sg.InputText(key='firstname_input', size=(20)), sg.Text('Lastname'), sg.InputText(key='lastname_input', size=(20))],
+              [sg.Text('Nationality'), sg.InputText(key='nationality_input', size=(20)),
                  sg.Radio('All', "gender_input", default=True, key='gender_input_all'),
                  sg.Radio('Male', "gender_input", key='gender_input_m'),
-                 sg.Radio('Female', "gender_input", key='gender_input_f')
+                 sg.Radio('Female', "gender_input", key='gender_input_f'),
+               sg.Text('Age'), sg.InputText(key='min_age_input', size=(3)), sg.Text(' to '), sg.InputText(key='max_age_input', size=(3))
               ],
+              [sg.Text('Convicted for offense')],
               [sg.Combo(key='offense_list', font=(table_font, table_font_size), values=list_offenses(cursor, 'SELECT * FROM offenses'),
-                          size=(128, 20))],
+                          size=(inputs_width, 20))],
               [sg.Button('Search')],
-              [sg.Text(citizen_columns.format('ID', 'Firstname', 'Lastname', 'Nationality', 'Gender', 'Year of Birth'), font=(table_font, table_font_size))],
-              [sg.Listbox(key='results', enable_events=True, font=(table_font, table_font_size), values=[], size=(128, 20))],
+              [sg.Text(citizen_columns.format('ID', 'Firstname', 'Lastname', 'Nationality', 'Gender', 'Year of Birth', 'Convictions'), font=(table_font, table_font_size))],
+              [sg.Listbox(key='results', enable_events=True, font=(table_font, table_font_size), values=[], size=(inputs_width, 20))],
               [sg.Text('', key='agg_bar', font=(table_font, table_font_size))],
-              [sg.Multiline('This', key='selected_citizen_data', font=(table_font, table_font_size), size=(128, 20))],
+              [sg.Text('Selected citizen')],
+              [sg.Multiline(key='selected_citizen_data', font=(table_font, table_font_size), size=(inputs_width, 20))],
               [sg.Button('Exit')]]
 
     # Create the Window
-    window = sg.Window('Window Title', layout)
+    window = sg.Window('The Police Database', layout)
     # Event Loop to process "events" and get the "values" of the inputs
     while True:
         event, values = window.read()
@@ -55,6 +58,7 @@ def set_selected_citizen_data(values, window, cursor, citizen_id):
         s += 'Nationality: {}\n'.format(item[3])
         s += 'Gender: {}\n'.format(item[4])
         s += 'Year of Birth: {}\n'.format(item[5])
+        s += 'Convictions: {}\n'.format(item[6])
 
     s += '\n'
     s += conviction_columns.format('Conv. ID', 'Code', 'Classification', 'Offense Name')
@@ -71,6 +75,8 @@ def set_selected_citizen_data(values, window, cursor, citizen_id):
 def on_search(values, window, cursor):
     inputs = []
     query = 'SELECT DISTINCT * FROM citizens'
+    if values['id_input'] != "":
+        inputs.append(('citizen_id', values['id_input']))
     if values['firstname_input'] != "":
         inputs.append(('firstname', values['firstname_input']))
     if values['lastname_input'] != "":
@@ -82,6 +88,7 @@ def on_search(values, window, cursor):
             inputs.append(('gender', 'm'))
         elif values['gender_input_f']:
             inputs.append(('gender', 'f'))
+
     inputsAmount = 0
     filters_query = ''
     for inp in inputs:
@@ -91,6 +98,20 @@ def on_search(values, window, cursor):
             filters_query += " AND {} LIKE '{}'".format(inp[0], inp[1])
         inputsAmount += 1
 
+    if values['min_age_input'] != "" or values['max_age_input'] != "":
+        min_age = -1
+        max_age = 9999
+        if values['min_age_input'] != "" and values['min_age_input'].isnumeric():
+            min_age = int(values['min_age_input'])
+        if values['max_age_input'] != "" and values['max_age_input'].isnumeric():
+            max_age = int(values['max_age_input'])
+        age_query = 'date_of_birth <= {} AND citizens.date_of_birth >= {}'.format(int(current_year) - min_age, int(current_year) - max_age)
+        if inputsAmount == 0:
+            filters_query += " WHERE {}".format(age_query)
+        elif inputsAmount > 0:
+            filters_query += " AND {}".format(age_query)
+        inputsAmount += 1
+
     selectedOffenseCode = ''
     if values['offense_list'] and values['offense_list'][0] != '':
         selectedOffenseCode = values['offense_list'].split('|')[1].strip()
@@ -98,7 +119,7 @@ def on_search(values, window, cursor):
 
     if selectedOffenseCode != '':
         query += " JOIN convictions ON convictions.convict_id = citizens.citizen_id WHERE convictions.offense_code = '{}'".format(selectedOffenseCode)
-        query = "SELECT DISTINCT citizen_id, firstname, lastname, nationality, gender, date_of_birth FROM ("\
+        query = "SELECT DISTINCT citizen_id, firstname, lastname, nationality, gender, date_of_birth, total_convictions FROM ("\
                 + query + filters_query.replace('WHERE', 'AND') + ") AS T1"
     else:
         query += filters_query
@@ -141,22 +162,24 @@ def set_aggregations_text(window, cursor):
         average_age = item[0]
         youngest = item[1]
         oldest = item[2]
-    agg_text += ' Average Age: {}'.format('{:.2f}'.format(current_year - average_age))
-    agg_text += ' Youngest: {}'.format('{:.2f}'.format(current_year - youngest))
-    agg_text += ' Oldest: {}'.format('{:.2f}'.format(current_year - oldest))
+        if not (average_age is None or youngest is None or oldest is None):
+            agg_text += ' Average Age: {}'.format('{:.2f}'.format(current_year - average_age))
+            agg_text += ' Youngest: {}'.format('{:.2f}'.format(current_year - youngest))
+            agg_text += ' Oldest: {}'.format('{:.2f}'.format(current_year - oldest))
     window['agg_bar'].update(agg_text)
+
 
 def list_citizens(cursor, query):
     cursor.execute(query)
     new_list = []
-    for (citizen_id, firstname, lastname, ethnicity, gender, dayOfBirth) in cursor:
-        new_list.append(citizen_columns.format(citizen_id, firstname, lastname, ethnicity, gender, dayOfBirth))
+    for (citizen_id, firstname, lastname, ethnicity, gender, dayOfBirth, total_convictions) in cursor:
+        new_list.append(citizen_columns.format(citizen_id, firstname, lastname, ethnicity, gender, dayOfBirth, total_convictions))
     return new_list
 
 
 def list_offenses(cursor, query):
     cursor.execute(query)
-    columns = "| {:<8} | {:<20} | {:<100}"
+    columns = "| {:<6} | {:<16} | {:<100}"
     # Print column names.
     #print(columns.format('offense_code', 'offense_class', 'offense_name'))
     # Print line to separate column names from tuples.

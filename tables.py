@@ -24,6 +24,7 @@ def create_table_citizens(cursor):
                      "  `nationality` varchar(20)," \
                      "  `gender` char(1)," \
                      "  `date_of_birth` int(9)," \
+                     "  `total_convictions` int(9)," \
                      "  PRIMARY KEY (`citizen_id`)" \
                      ") ENGINE=InnoDB"
     try_create_table(cursor, create_table)
