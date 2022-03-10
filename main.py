@@ -10,7 +10,7 @@ cnx = mysql.connector.connect(user='root',
                               port=3306
                               )
 
-DB_NAME = 'policedb'
+DB_NAME = 'lindholm_policedb'
 
 cursor = cnx.cursor()
 
@@ -140,26 +140,27 @@ def print_convictions(cursor, query):
 
 # Resets tables and views and parses and adds data to the new tables.
 def reset_tables(cursor):
+    print('Removing any old tables...')
     cursor.execute("DROP TABLE IF EXISTS citizens")
     cursor.execute("DROP TABLE IF EXISTS offenses")
     cursor.execute("DROP TABLE IF EXISTS convictions")
+    cursor.execute('DROP VIEW IF EXISTS top_offenders')
+    cursor.execute('DROP VIEW IF EXISTS top_offenses')
 
-    # Create tables.
+    # Create tables and Views.
+    print('Creating new tables and Views...')
     tables.create_table_citizens(cursor)
     tables.create_table_offenses(cursor)
     tables.create_table_convictions(cursor)
+    cursor.execute("CREATE VIEW top_offenders AS SELECT * FROM citizens ORDER BY total_convictions DESC LIMIT 10")
+    cursor.execute("CREATE VIEW top_offenses AS SELECT convictions.offense_code, count(convictions.offense_code)"
+                   "AS total FROM convictions GROUP BY offense_code ORDER BY total DESC LIMIT 10")
 
     # Read .csv data to lists.
+    print('Parsing and adding data to tables...')
     read_txt_data('population.txt', 0)
     read_txt_data('offenses.txt', 1)
     read_txt_data('convictions.txt', 2)
-
-    # Create Views
-    cursor.execute('DROP VIEW IF EXISTS top_offenders')
-    cursor.execute("CREATE VIEW top_offenders AS SELECT * FROM citizens ORDER BY total_convictions DESC LIMIT 10")
-    cursor.execute('DROP VIEW IF EXISTS top_offenses')
-    cursor.execute("CREATE VIEW top_offenses AS SELECT convictions.offense_code, count(convictions.offense_code)"
-                   "AS total FROM convictions GROUP BY offense_code ORDER BY total DESC LIMIT 10")
 
 
 # Print data from tables to console to check that tuples have been added successfully.
@@ -181,10 +182,15 @@ except mysql.connector.Error as err:
     else:
         print(err)
 
-if True:
+check_for_table_query = "SHOW TABLES LIKE 'citizens'"
+cursor.execute(check_for_table_query)
+result = cursor.fetchone()
+if not result or False:     # Set to True when debugging to always reset tables.
     reset_tables(cursor)
+    # there is a table named "tableName"
 
-if False:
+if False:   # Set to True when debugging to print tables to console.
     print_tables_to_console(cursor)
 
+# Displays the GUI.
 gui.display_gui(cursor)
