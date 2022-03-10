@@ -182,12 +182,12 @@ except mysql.connector.Error as err:
     else:
         print(err)
 
+# Checks if 'citizens' table exists, sets up tables and adds data if not.
 check_for_table_query = "SHOW TABLES LIKE 'citizens'"
 cursor.execute(check_for_table_query)
 result = cursor.fetchone()
 if not result or False:     # Set to True when debugging to always reset tables.
     reset_tables(cursor)
-    # there is a table named "tableName"
 
 if False:   # Set to True when debugging to print tables to console.
     print_tables_to_console(cursor)
