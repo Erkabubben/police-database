@@ -1,6 +1,12 @@
 import mysql.connector
 from mysql.connector import errorcode
 
+# Defines the column sizes when printing or listing data.
+citizen_columns = "| {:<9} | {:<23} | {:<23} | {:<18} | {:<6} | {:<13} | {:<10}"
+conviction_columns = "| {:<8} | {:<8} | {:<16} | {:<200}"
+offense_columns = "| {:<6} | {:<16} | {:<100}"
+
+
 # Attempts to create a table from the given schema query.
 def try_create_table(cursor, query):
     try:
@@ -23,14 +29,14 @@ def create_table_citizens(cursor):
                      "  `lastname` varchar(30) NOT NULL," \
                      "  `nationality` varchar(20)," \
                      "  `gender` char(1)," \
-                     "  `date_of_birth` int(9)," \
+                     "  `year_of_birth` int(9)," \
                      "  `total_convictions` int(9)," \
                      "  PRIMARY KEY (`citizen_id`)" \
                      ") ENGINE=InnoDB"
     try_create_table(cursor, create_table)
 
 
-# Defines a schema and attempts to create a citizens table in the database.
+# Defines a schema and attempts to create an offenses table in the database.
 def create_table_offenses(cursor):
     create_table = "CREATE TABLE `offenses` (" \
                      "  `offense_code` varchar(8) NOT NULL," \
@@ -41,7 +47,7 @@ def create_table_offenses(cursor):
     try_create_table(cursor, create_table)
 
 
-# Defines a schema and attempts to create a citizens table in the database.
+# Defines a schema and attempts to create a convictions table in the database.
 def create_table_convictions(cursor):
     create_table = "CREATE TABLE `convictions` (" \
                      "  `conviction_id` varchar(8) NOT NULL," \
